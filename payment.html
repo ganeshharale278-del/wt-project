@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Hotel Gavkari</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <div class="logo">☕ Hotel Gavkari</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="admin-login.html">Admin</a></li>
+              <li><button class="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section">
+    <h2>Payment</h2>
+
+    <div class="payment-wrapper">
+      <div class="payment-summary">
+        <h3>Bill Details</h3>
+        <div id="bill-items"></div>
+        <hr>
+        <p>Subtotal: <span id="bill-subtotal">₹0</span></p>
+        <p>Delivery: <span>₹0</span></p>
+        <h3>Total: <span id="bill-total">₹0</span></h3>
+      </div>
+
+      <div class="payment-methods">
+        <h3>Choose Payment Method</h3>
+
+        <div class="method-tabs">
+          <button class="tab-btn active" data-tab="card">💳 Card</button>
+          <button class="tab-btn" data-tab="upi">📱 UPI</button>
+          <button class="tab-btn" data-tab="cod">💵 Cash on Delivery</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-card">
+          <form id="card-form">
+            <input type="text" placeholder="Cardholder Name" required>
+            <input type="text" placeholder="Card Number (1234 5678 9012 3456)" maxlength="19" required>
+            <div class="row">
+              <input type="text" placeholder="MM/YY" maxlength="5" required>
+              <input type="text" placeholder="CVV" maxlength="3" required>
+            </div>
+            <button type="submit" class="pay-btn">Pay Now</button>
+          </form>
+        </div>
+
+        <div class="tab-panel" id="tab-upi">
+          <p>Scan the QR or pay to UPI ID below:</p>
+          <img id="upi-qr" alt="UPI QR">
+          <p>UPI: <b>dsycafe@876@okaxis</b></p>
+          <button class="pay-btn" id="upi-pay-btn">I have paid</button>
+        </div>
+
+        <div class="tab-panel" id="tab-cod">
+          <p>Pay in cash when your order arrives at your doorstep.</p>
+          <button class="pay-btn" id="cod-pay-btn">Confirm Order</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2025 Hotel Gavkari. All rights reserved.</p></footer>
+  <div id="notification" class="notification"></div>
+
+  <!-- Success modal -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <div class="success-icon">✅</div>
+      <h2>Order Placed!</h2>
+      <p>Your order ID is <b id="success-order-id">#</b></p>
+      <p>Estimated delivery: <b id="success-eta">--</b> mins</p>
+      <a href="index.html" class="pay-btn">Back to Home</a>
+    </div>
+  </div>
+
+  <script src="payment.js"></script>
+  <script src="theme.js"></script>
+  <button id="chat-fab" title="Chat with AI">🤖</button>
+  <div id="chat-window">
+    <div class="chat-header">
+      <div>🤖 Gavkari Assistant<br><span>AI-powered menu help</span></div>
+      <button class="chat-close">✕</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div class="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Ask about our menu...">
+      <button id="chat-send">➤</button>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
+</body>
+</html>

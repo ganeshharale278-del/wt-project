@@ -1,0 +1,172 @@
+/* ===== Shared additions for new pages ===== */
+.page-section { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+.link-btn { display:inline-block; margin-top:1rem; color:var(--primary); text-decoration:none; font-weight:bold; }
+.link-btn:hover { color: var(--secondary); }
+
+/* ===== Payment page ===== */
+.payment-wrapper { display:flex; gap:2rem; flex-wrap:wrap; padding:0 1rem; }
+.payment-summary, .payment-methods { flex:1; min-width:300px; background:var(--card-bg,#fff); padding:2rem; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+.payment-summary h3 { color: var(--primary); margin-bottom: 1rem; }
+.payment-summary p { display:flex; justify-content:space-between; margin:0.5rem 0; }
+.payment-summary hr { margin:1rem 0; border:none; border-top:1px dashed #ccc; }
+.bill-item { display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid #eee; }
+
+.method-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.tab-btn { flex:1; padding:0.7rem; border:2px solid var(--secondary); background:var(--card-bg,#fff); border-radius:8px; cursor:pointer; transition:0.3s; font-weight:bold; color:var(--text-dark,#2d3436); }
+.tab-btn.active, .tab-btn:hover { background: var(--secondary); color:#fff; }
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+.tab-panel input { width:100%; padding:0.8rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem; background:var(--input-bg,#fff); color:var(--text-dark,#2d3436); }
+.tab-panel .row { display:flex; gap:1rem; }
+.tab-panel .row input { flex:1; }
+.tab-panel img { display:block; margin:1rem auto; border:1px solid #eee; border-radius:8px; }
+
+.pay-btn { width:100%; padding:0.9rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff; border:none; border-radius:8px; font-size:1.05rem; font-weight:bold; cursor:pointer; transition:0.3s; text-decoration:none; display:inline-block; text-align:center; }
+.pay-btn:hover { transform: translateY(-2px); box-shadow:0 8px 16px rgba(108,92,231,0.3); }
+
+/* ===== Modal ===== */
+.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:999; }
+.modal.show { display:flex; }
+.modal-content { background:var(--card-bg,#fff); padding:2.5rem; border-radius:15px; max-width:400px; text-align:center; }
+.success-icon { font-size:4rem; margin-bottom:1rem; }
+.modal-content h2 { color: var(--accent); margin-bottom:1rem; }
+.modal-content p { margin:0.5rem 0; }
+
+/* ===== Admin login ===== */
+.login-section { display:flex; justify-content:center; align-items:center; min-height:60vh; }
+.login-card { background:var(--card-bg,#fff); padding:2.5rem; border-radius:15px; box-shadow:0 12px 30px rgba(0,0,0,0.15); max-width:400px; width:100%; text-align:center; }
+.login-card h2 { color:var(--primary); margin-bottom:0.5rem; }
+.login-card .hint { color:#777; margin-bottom:1.5rem; font-size:0.9rem; }
+.login-card input { width:100%; padding:0.8rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:8px; background:var(--input-bg,#fff); color:var(--text-dark,#2d3436); }
+.error-msg { color:#d63031; margin-top:1rem; min-height:1.2rem; }
+
+/* ===== Admin dashboard ===== */
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; margin-bottom:2rem; }
+.stat-card { background:linear-gradient(135deg, var(--primary), var(--secondary)); color:#fff; padding:1.5rem; border-radius:12px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+.stat-card h4 { font-size:0.9rem; opacity:0.9; margin-bottom:0.5rem; }
+.stat-card p { font-size:1.8rem; font-weight:bold; }
+
+.filter-row { display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.filter-row input, .filter-row select { padding:0.7rem; border:1px solid #ccc; border-radius:8px; flex:1; min-width:180px; background:var(--input-bg,#fff); color:var(--text-dark,#2d3436); }
+
+.table-wrapper { overflow-x:auto; background:var(--card-bg,#fff); border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.08); }
+.orders-table { width:100%; border-collapse:collapse; min-width:900px; }
+.orders-table th { background:var(--primary); color:#fff; padding:1rem 0.8rem; text-align:left; font-size:0.9rem; }
+.orders-table td { padding:0.8rem; border-bottom:1px solid #eee; font-size:0.9rem; vertical-align:top; color:var(--text-dark,#2d3436); }
+.orders-table tr:hover { background:rgba(108,92,231,0.05); }
+.status-badge { padding:0.3rem 0.7rem; border-radius:20px; font-size:0.8rem; font-weight:bold; display:inline-block; }
+.status-Pending { background:#ffeaa7; color:#b8860b; }
+.status-Preparing { background:#74b9ff; color:#fff; }
+.status-Delivered { background:#55efc4; color:#00695c; }
+.status-Cancelled { background:#fab1a0; color:#c0392b; }
+.action-btn { padding:0.3rem 0.7rem; border:none; border-radius:5px; cursor:pointer; font-size:0.8rem; margin-right:0.3rem; }
+.action-btn.delete { background:#d63031; color:#fff; }
+.action-btn.status { background:var(--accent); color:#fff; }
+.items-list { font-size:0.85rem; color:#555; max-width:200px; }
+
+/* =============================================
+   FEATURE 1: DARK MODE
+   ============================================= */
+body.dark-mode {
+  --primary: #a29bfe;
+  --secondary: #fd79a8;
+  --accent: #00cec9;
+  --bg-light: #1a1a2e;
+  --text-dark: #eaeaea;
+  --card-bg: #16213e;
+  --input-bg: #0f3460;
+  background: #1a1a2e;
+  color: #eaeaea;
+}
+body.dark-mode header { background: #16213e; }
+body.dark-mode .dish-card { background: #16213e; color: #eaeaea; }
+body.dark-mode .delivery-info { background: #16213e; color: #a29bfe; }
+body.dark-mode .orders-table td { border-bottom: 1px solid #2d2d4e; }
+body.dark-mode .orders-table tr:hover { background: #0f3460; }
+body.dark-mode .bill-item { border-bottom-color: #2d2d4e; }
+body.dark-mode footer { background: #16213e; }
+
+.theme-toggle {
+  background: none;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.15); }
+
+/* =============================================
+   FEATURE 2: AI CHATBOT
+   ============================================= */
+#chat-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(108,92,231,0.5);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+#chat-fab:hover { transform: scale(1.1); }
+#chat-window {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 340px;
+  max-height: 500px;
+  background: var(--card-bg, #fff);
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+#chat-window.open { display: flex; }
+.chat-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 1rem 1.2rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+.chat-header span { font-size: 0.8rem; opacity: 0.85; }
+.chat-close { background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer; }
+#chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.chat-msg { max-width: 80%; padding: 0.6rem 0.9rem; border-radius: 14px; font-size: 0.9rem; line-height: 1.4; }
+.chat-msg.bot { background: #f0f0ff; color: #333; align-self: flex-start; border-bottom-left-radius: 4px; }
+.chat-msg.user { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+.chat-msg.typing { background: #f0f0ff; color: #999; font-style: italic; align-self: flex-start; }
+.chat-input-row { display: flex; padding: 0.7rem; border-top: 1px solid #eee; gap: 0.5rem; }
+#chat-input { flex: 1; padding: 0.6rem 0.9rem; border: 1px solid #ddd; border-radius: 20px; font-size: 0.9rem; outline: none; background: var(--input-bg,#fff); color: var(--text-dark,#2d3436); }
+#chat-send { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; font-size: 1rem; }
+body.dark-mode .chat-msg.bot { background: #0f3460; color: #eaeaea; }
+body.dark-mode .chat-msg.typing { background: #0f3460; }
+
+/* =============================================
+   FEATURE 3: QR CODE MODAL
+   ============================================= */
+#qr-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:999; }
+#qr-modal.show { display:flex; }
+.qr-card { background:var(--card-bg,#fff); padding:2rem; border-radius:18px; text-align:center; max-width:320px; width:90%; box-shadow:0 12px 40px rgba(0,0,0,0.25); }
+.qr-card h3 { color:var(--primary); margin-bottom:0.3rem; }
+.qr-card p { color:#777; font-size:0.9rem; margin-bottom:1rem; }
+.qr-close-btn { background:var(--primary); color:#fff; border:none; padding:0.6rem 2rem; border-radius:8px; cursor:pointer; font-size:0.95rem; margin-top:0.5rem; }
+
+/* =============================================
+   FEATURE 4: ANALYTICS
+   ============================================= */
+.analytics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin-top:1.5rem; }
+.analytics-card { background:var(--card-bg,#fff); border-radius:15px; padding:1.5rem; box-shadow:0 6px 15px rgba(0,0,0,0.08); }
+.analytics-card h3 { color:var(--primary); margin-bottom:1rem; font-size:1rem; }
+
+/* =============================================
+   FEATURE 5: JAVA INVOICE BUTTON
+   ============================================= */
+.invoice-btn { background:#00b894; color:#fff; border:none; padding:0.4rem 0.8rem; border-radius:6px; cursor:pointer; font-size:0.8rem; margin-left:4px; }
+.invoice-btn:hover { background:#009d7e; }

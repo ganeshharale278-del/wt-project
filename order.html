@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary - Hotel Gavkari</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <div class="logo">☕ Hotel Gavkari</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="admin-login.html">Admin</a></li>
+              <li><button class="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section">
+    <h2>Review Your Order</h2>
+
+    <div class="order-wrapper">
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="order-items"><p>No items yet</p></div>
+        <div id="order-total">Total: ₹0</div>
+        <a href="index.html#menu" class="link-btn">← Add more items</a>
+      </div>
+
+      <div class="customer-form">
+        <h3>Customer Details</h3>
+        <form id="order-form">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="phone" placeholder="Phone" required>
+          <input type="text" id="address" placeholder="Address" required>
+          <textarea id="notes" placeholder="Notes (optional)"></textarea>
+          <button type="submit">Proceed to Payment →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2025 Hotel Gavkari. All rights reserved.</p></footer>
+  <div id="notification" class="notification"></div>
+
+  <script src="order.js"></script>
+  <script src="theme.js"></script>
+  <button id="chat-fab" title="Chat with AI">🤖</button>
+  <div id="chat-window">
+    <div class="chat-header">
+      <div>🤖 Gavkari Assistant<br><span>AI-powered menu help</span></div>
+      <button class="chat-close">✕</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div class="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Ask about our menu...">
+      <button id="chat-send">➤</button>
+    </div>
+  </div>
+  <script src="chatbot.js"></script>
+</body>
+</html>

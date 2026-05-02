@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSY Cafe - Order Online</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <div class="logo">☕ Hotel Gavkari </div>
+    <nav>
+      <ul>
+        <li><a href="admin-login.html">Admin</a></li>
+
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="qr-menu-btn" class="theme-toggle" title="QR Code Menu">📱 QR</button></li>
+        <li><button class="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Hotel Gavkari</h1>
+    <p>Delicious food, freshly prepared, delivered to your doorstep!</p>
+  </section>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="categories">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="appetizers">Appetizers</button>
+      <button class="category-btn" data-category="main">Main Course</button>
+      <button class="category-btn" data-category="desserts">Desserts</button>
+      <button class="category-btn" data-category="drinks">Drinks</button>
+    </div>
+    <div id="dishes-container" class="menu-grid"></div>
+  </section>
+
+  <section id="order">
+    <div class="delivery-info">
+        <p>⏱ Estimated Delivery: <span id="delivery-time">--</span> mins</p>
+        <p>👥 Active Orders: <span id="active-orders">--</span></p>
+    </div>
+
+    <h2>Your Order</h2>
+    <div class="order-wrapper">
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="order-items"><p>No items yet</p></div>
+        <div id="order-total">Total: ₹0</div>
+      </div>
+
+      <div class="customer-form">
+       <h3>Proceed</h3>
+      <button id="go-to-order-btn">Go to Order Page</button>
+       </div>
+    </div>
+  </section>
+
+<section id="about">
+  <h2>About DSY Cafe</h2>
+  
+  <div class="about-wrapper">
+    <div class="about-text">
+      <p>At <strong>DSY Cafe</strong>, we believe in serving food that not only delights your taste buds but also warms your heart. Founded in 2020, our journey started with a small coffee cart and a dream to bring the finest flavors to our community.</p>
+      
+      <p>Our mission is simple: <em>fresh, tasty, and responsibly sourced food</em>. Every dish is prepared with care, using locally sourced ingredients to ensure both quality and sustainability.</p>
+      
+      <p>Specialties include handcrafted beverages, gourmet desserts, and chef-inspired main courses. We are passionate about creating an experience that feels like home, whether you dine with us or order online.</p>
+      
+      <ul>
+        <li>✅ Freshly brewed coffee & artisanal drinks</li>
+        <li>✅ Homemade pastries & desserts</li>
+        <li>✅ Seasonal & locally sourced ingredients</li>
+        <li>✅ Friendly and sustainable service</li>
+      </ul>
+      
+      <p>Join us at DSY Cafe and enjoy a cozy, flavorful experience!</p>
+    </div>
+    
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1547592180-ec3990b123ad?auto=format&fit=crop&w=800&q=80" alt="Cafe Interior">
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📞 9923442342 | ✉ dsycafe@gmail.com</p>
+    <p>123 Culinary Street, Food District, City, India</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DSY Cafe. All rights reserved.</p>
+  </footer>
+
+  <div id="notification" class="notification"></div>
+
+  <div id="payment-modal">
+  <div class="modal-content">
+    <h2>Choose Payment Method</h2>
+    <div class="payment-options">
+      <button id="cod-btn">Cash on Delivery</button>
+      <button id="upi-btn">Pay via UPI</button>
+    </div>
+
+    <!-- UPI QR section (hidden initially) -->
+    <div id="upi-section" style="display:none; margin-top:20px;">
+      <h3>Scan to Pay</h3>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=dsycafe867@okaxis&pn=DSYCafe&am=100" alt="QR Code">
+      <p>UPI: <b>dsycafe@876@okaxis</b></p>
+      <button id="payment-success-btn">Payment Successful</button>
+      <button id="payment-cancel-btn">Cancel</button>
+    </div>
+
+    <!-- COD confirmation (hidden initially) -->
+    <div id="cod-section" style="display:none; margin-top:20px;">
+      <p>Your order will be collected in cash on delivery.</p>
+      <button id="cod-success-btn">Confirm Order</button>
+      <button id="payment-cancel-btn-2">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+  
+  <script src="app.js"></script>
+  <script src="theme.js"></script>
+  <script src="qrcode-menu.js"></script>
+  <script src="chatbot.js"></script>
+  
+
+ 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Hotel Gavkari</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+  <header>
+    <div class="logo">☕ Hotel Gavkari — Admin</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Site</a></li>
+        <li><a href="admin-analytics.html">📊 Analytics</a></li>
+        <li><button class="theme-toggle">🌙</button></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section">
+    <h2>📋 All Orders</h2>
+
+    <div class="stats-row">
+      <div class="stat-card"><h4>Total Orders</h4><p id="stat-total">0</p></div>
+      <div class="stat-card"><h4>Pending</h4><p id="stat-pending">0</p></div>
+      <div class="stat-card"><h4>Revenue</h4><p id="stat-revenue">₹0</p></div>
+    </div>
+
+    <div class="filter-row">
+      <input type="text" id="search-input" placeholder="🔍 Search by name, email, or phone...">
+      <select id="status-filter">
+        <option value="all">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Preparing">Preparing</option>
+        <option value="Delivered">Delivered</option>
+      </select>
+      <button id="refresh-btn" class="pay-btn" style="width:auto;padding:0.6rem 1.2rem;">⟳ Refresh</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Customer</th><th>Contact</th><th>Items</th>
+            <th>Total</th><th>Payment</th><th>Status</th><th>Date</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody">
+          <tr><td colspan="9" style="text-align:center;padding:2rem;">Loading orders...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer><p>&copy; 2025 Hotel Gavkari. All rights reserved.</p></footer>
+  <div id="notification" class="notification"></div>
+
+  <script src="admin.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
